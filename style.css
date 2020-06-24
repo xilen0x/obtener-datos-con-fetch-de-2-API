@@ -10,6 +10,9 @@ h1{
     margin-top: 5%;
 }
 
+.hide{
+    display: none;
+}
 /*--------Estilos a datos obtenidos de la API----------*/
 h2{
     text-transform: uppercase;

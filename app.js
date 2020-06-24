@@ -2,6 +2,7 @@
 
 //---------------Accedo al botón y contenedor creados---------------------:
 var boton = document.getElementById('boton');
+var alert = document.getElementById('alert');
 var contenedor = document.getElementById('contenedor');
 var contBanderas = document.getElementById('banderas'); 
 
@@ -16,7 +17,12 @@ boton.addEventListener('click', function() {
     .then(data => data.json())
     .then(countries => {
         mostrarBanderas(countries);
-    });
+    })
+    .catch(error => {
+        alert.classList.toggle('hide');
+        alert.innerHTML = error;
+        setTimeout(() => alert.classList.toggle('hide'), 6000);
+    })
 });
 //-----------------------Se separaron los eventos fetch para evitar posibles conflictos----:
 function getPosts() {
